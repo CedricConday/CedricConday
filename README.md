@@ -46,7 +46,7 @@ More fixes merged/in-review across DuckDB, growthbook, django-scim2, OpenTelemet
 
 ### Stack
 **AI / LLM** — multi-provider APIs (Claude · OpenAI · Groq) · prompt & system-prompt design · multi-agent orchestration · Model Context Protocol (self-authored servers) · RAG · vector DBs · vision-OCR · Ollama
-**Languages** — TypeScript · Python · JavaScript · SQL · Rust · Bash · Java · C++
+**Languages** — TypeScript · Python · JavaScript · SQL · Rust · Bash
 **Medical / imaging** — DICOM · NIfTI · neuroimaging pipelines (MNE, nibabel, spinalcordtoolbox) · FHIR / HL7 (learning)
 **Data / Quant** — pandas · NumPy · SciPy · scikit-learn · backtesting · Monte-Carlo simulation
 **Mobile / Web** — React Native · React 19 · Expo · SQLite · Firebase · Express · Vite
