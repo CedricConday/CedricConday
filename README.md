@@ -1,4 +1,4 @@
-# Cedric Conday — Software Engineer (AI / LLM · MCP)
+# Cedric Conday — Software Engineer · AI / Full-Stack
 
 I build LLM-powered products and agent systems end to end, and I build *with* AI as the method — orchestrating multiple agents in parallel as a one-person engineering team. Self-taught into software engineering in twelve months while caregiving full-time for a family member with multiple sclerosis — which is why a real thread of my work is **medical software**, alongside **fintech / payments** depth. TypeScript + Python. **Open to remote roles and relocation (incl. New Zealand).** *In Deutschland ansässig; Deutsch und Englisch, remote wie vor Ort.*
 
