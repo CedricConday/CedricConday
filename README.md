@@ -16,8 +16,11 @@ FX tools — rate, conversion, volatility, optimal send-window, correlation, cha
 **[centrapay-mcp](https://github.com/CedricConday/centrapay-mcp)** — MCP server for Centrapay, NZ payments *(TypeScript · npm · contract tests)*
 Nine tools modelled on the real Centrapay API — payment requests, settlement, idempotent refunds, merchants — with fetch-mock contract tests over every request.
 
-**[Protocol Tracker](https://github.com/CedricConday/protocol-tracker)** — cross-platform health app for a real MS treatment protocol, iOS + Android *(React Native · Expo · TypeScript · SQLite)*
-Built for a family member's multiple-sclerosis care. Multi-provider LLM **vision-OCR** (Anthropic / OpenAI / Groq) reads a photographed medical report and auto-fills structured data — BYO-key, with token & cost guardrails. Offline-first SQLite (versioned migrations), biometric auth, PDF reports, EN/DE, accessibility-oriented.
+**[Protocol Tracker](https://github.com/CedricConday/protocol-tracker)** — health app for a real MS treatment protocol, built for a family member's multiple-sclerosis care. Shipped in two builds:
+- **v1 — cross-platform native** *(React Native · Expo · TypeScript · SQLite)*: multi-provider LLM **vision-OCR** (Anthropic / OpenAI / Groq) reads a photographed medical report and auto-fills structured data — BYO-key, with token & cost guardrails; offline-first SQLite (versioned migrations), biometric auth, PDF reports, EN/DE, accessibility-oriented.
+- **v2 — re-architected as a zero-knowledge PWA** *(vanilla JS · Capacitor iOS/Android · IndexedDB · PBKDF2→AES-GCM-256)*: all patient data encrypted client-side, no server, encrypted backup/restore — privacy by design shrinks the compliance surface to zero.
+
+One repo carries both: `HEAD` is the PWA, tag [`v1.1.0`](https://github.com/CedricConday/protocol-tracker/releases/tag/v1.1.0) is the native app.
 
 **[nifti-qc](https://github.com/CedricConday/nifti-qc)** — quality-control for medical-imaging geometry *(Python)*
 Catches silently-broken NIfTI qform/sform geometry before it corrupts a neuroimaging pipeline — the kind of quiet data bug that invalidates an MS-lesion analysis without ever raising an error.
