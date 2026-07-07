@@ -1,10 +1,8 @@
 # Cedric Conday — Software Engineer · AI / Full-Stack
 
-I build LLM-powered products and agent systems end to end, and I build *with* AI as the method — orchestrating multiple agents in parallel as a one-person engineering team. Self-taught into software engineering in twelve months while caregiving full-time for a family member with multiple sclerosis — which is why a real thread of my work is **medical software**, alongside **fintech / payments** depth. TypeScript + Python. **Open to remote roles and relocation (incl. New Zealand).** *In Deutschland ansässig; Deutsch und Englisch, remote wie vor Ort.*
+Self-taught software engineer. I build LLM-powered products and agent systems end to end, with AI as the method — orchestrating several agents as a one-person team. Current interest: medical software and fintech / payments. TypeScript + Python. **Open to remote roles and relocation, incl. New Zealand.** *In Deutschland ansässig; Deutsch und Englisch, remote wie vor Ort.*
 
 📫 cedric@condaydigital.com · [LinkedIn](https://linkedin.com/in/cedricconday)
-
-> **Building in public** — a fix, tool, or feature most days. The commit graph is the résumé.
 
 ---
 
@@ -50,9 +48,12 @@ More merged across DuckDB, growthbook, django-scim2, and Adyen; further fixes in
 ---
 
 ### Stack
-**AI / LLM** — multi-provider APIs (Claude · OpenAI · Groq) · prompt & system-prompt design · multi-agent orchestration · Model Context Protocol (self-authored servers) · RAG · vector DBs · vision-OCR · Ollama
-**Languages** — TypeScript · Python · JavaScript · SQL · Rust · Bash
-**Medical / imaging** — DICOM · NIfTI · neuroimaging pipelines (MNE, nibabel, spinalcordtoolbox) · FHIR / HL7 (learning)
-**Data / Quant** — pandas · NumPy · SciPy · scikit-learn · backtesting · Monte-Carlo simulation
-**Mobile / Web** — React Native · React 19 · Expo · SQLite · Firebase · Express · Vite
-**Infra / Quality** — AWS (Lambda / SAM) · Docker · Linux · GitHub Actions · unit / contract / regression testing · observability (OpenTelemetry) · signed commits
+
+| | |
+|---|---|
+| **Languages** | TypeScript · Python · JavaScript · SQL · Rust · Bash |
+| **AI / LLM** | Multi-provider APIs (Claude · OpenAI · Groq) · MCP (self-authored servers) · multi-agent orchestration · RAG · vector DBs · vision-OCR |
+| **Web / Mobile** | React · React Native · Expo · Vite · Express · SQLite · Firebase |
+| **Data / Quant** | pandas · NumPy · SciPy · scikit-learn · backtesting · Monte-Carlo |
+| **Medical / imaging** | DICOM · NIfTI · neuroimaging (MNE · nibabel) · FHIR / HL7 (learning) |
+| **Infra / Quality** | AWS (Lambda · SAM) · Docker · Linux · GitHub Actions · unit / contract / regression tests · OpenTelemetry · signed commits |
