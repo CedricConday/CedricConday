@@ -24,7 +24,9 @@ Nine tools modelled on the real Centrapay API — payment requests, settlement, 
 Catches silently-broken NIfTI qform/sform geometry before it corrupts a neuroimaging pipeline — the kind of quiet data bug that invalidates an MS-lesion analysis without ever raising an error.
 
 ### Open-source contributions
-Bugs found, reproduced, fixed *with a regression test*, and merged upstream — **12 merged across 11 established projects**:
+Bugs found, reproduced, fixed *with a regression test*, and merged upstream — **19 merged across 14 established projects**:
+<!-- COUNT IS LIVE: never hardcode from memory — verify with `gh search prs --author CedricConday --merged --limit 100 --json url --jq 'length'` before editing. -->
+
 
 **Medical & neuro-imaging**
 - **[mne-python](https://github.com/mne-tools/mne-python/pull/14002)** — eyetracking calibration files read as UTF-8 *(neuroimaging)*
