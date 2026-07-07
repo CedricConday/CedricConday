@@ -30,12 +30,14 @@ Bugs found, reproduced, fixed *with a regression test*, and merged upstream — 
 
 **Medical & neuro-imaging**
 - **[mne-python](https://github.com/mne-tools/mne-python/pull/14002)** — eyetracking calibration files read as UTF-8 *(neuroimaging)*
-- *In review:* MS-imaging campaign — [spinalcordtoolbox](https://github.com/spinalcordtoolbox/spinalcordtoolbox/pull/5263), [nibabel](https://github.com/nipy/nibabel/pull/1522), [dicom2nifti](https://github.com/icometrix/dicom2nifti/pull/166), [LST-AI](https://github.com/CompImg/LST-AI/pull/45) *(DICOM / NIfTI · MS lesion tooling)*
+- **[nibabel](https://github.com/nipy/nibabel/pull/1522)** — set `patient_birth_date` dtype in the ECAT header to signed int32 *(neuroimaging — also earned a [CITATION.cff credit](https://github.com/nipy/nibabel/pull/1524))*
+- *In review:* MS-imaging campaign — [dicom2nifti](https://github.com/icometrix/dicom2nifti/pull/166), [LST-AI](https://github.com/CompImg/LST-AI/pull/45) *(DICOM / NIfTI · MS lesion tooling)*
 
 **Fintech & data**
 - **[schwifty](https://github.com/mdomke/schwifty/pull/292)** — correct ISO 7064 mod-97-10 checksum for BA *(IBAN)*
 - **[faker](https://github.com/joke2k/faker/pull/2403)** — compute a valid ISO 7064 Mod 11,10 check digit for the de_DE `vat_id` *(test-data)*
 - **[aeon](https://github.com/aeon-toolkit/aeon/pull/3585)** — `Padder` validates `fill_value`, rejects array-likes *(time-series ML)*
+- **[dpdata](https://github.com/deepmodeling/dpdata/pull/1010)** — build pymatgen `Molecule` species from `atom_types` order *(computational materials · DeepModeling)*
 
 **Developer tooling & infra**
 - **[jaeger](https://github.com/jaegertracing/jaeger/pull/8902)** — MCP tooling reports `total_count` + truncation *(observability · MCP · CNCF)*
@@ -43,7 +45,7 @@ Bugs found, reproduced, fixed *with a regression test*, and merged upstream — 
 - **[js-joda](https://github.com/js-joda/js-joda/pull/804)** — `Instant.parse` accepts and resolves an offset *(date-time)*
 - **[krkn-ai](https://github.com/krkn-chaos/krkn-ai/pull/382)** — include dependency in `CompositeScenario` identity *(chaos engineering)*
 
-More fixes merged/in-review across DuckDB, growthbook, django-scim2, OpenTelemetry, cargo-deny, Zettlr, and Adyen.
+More merged across DuckDB, growthbook, django-scim2, and Adyen; further fixes in review across OpenTelemetry and cargo-deny.
 
 ---
 
