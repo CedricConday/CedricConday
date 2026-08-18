@@ -1,6 +1,6 @@
 # Cedric Conday — Software Engineer · AI / Full-Stack
 
-Self-taught software engineer. I build LLM-powered products and agent systems end to end, with AI as the method — orchestrating several agents as a one-person team. Current interest: medical software and fintech / payments. TypeScript + Python. **Open to remote roles and relocation, incl. New Zealand.** *In Deutschland ansässig; Deutsch und Englisch, remote wie vor Ort.*
+Self-taught software engineer. I build LLM-powered products and agent systems end to end, with AI as the method — orchestrating several agents as a one-person team. Current interest: medical software and fintech / payments. TypeScript + Python. **Open to remote roles and relocation.** *In Deutschland ansässig; Deutsch und Englisch, remote wie vor Ort.*
 
 📫 cedric@condaydigital.com · [LinkedIn](https://linkedin.com/in/cedricconday)
 
@@ -14,22 +14,22 @@ FX tools — rate, conversion, volatility, optimal send-window, correlation, cha
 **[centrapay-mcp](https://github.com/CedricConday/centrapay-mcp)** — MCP server for Centrapay, NZ payments *(TypeScript · npm · contract tests)*
 Nine tools modelled on the real Centrapay API — payment requests, settlement, idempotent refunds, merchants — with fetch-mock contract tests over every request.
 
-**[Protocol Tracker](https://github.com/CedricConday/protocol-tracker)** — health app for a real MS treatment protocol, built for a family member's multiple-sclerosis care. Shipped in two builds:
+**[Protocol Tracker](https://github.com/CedricConday/protocol-tracker)** — clinical-grade health app for a real treatment protocol, shipped in two builds:
 - **v1 — cross-platform native** *(React Native · Expo · TypeScript · SQLite)*: multi-provider LLM **vision-OCR** (Anthropic / OpenAI / Groq) reads a photographed medical report and auto-fills structured data — BYO-key, with token & cost guardrails; offline-first SQLite (versioned migrations), biometric auth, PDF reports, EN/DE, accessibility-oriented.
 - **v2 — re-architected as a zero-knowledge PWA** *(vanilla JS · Capacitor iOS/Android · IndexedDB · PBKDF2→AES-GCM-256)*: all patient data encrypted client-side, no server, encrypted backup/restore — privacy by design shrinks the compliance surface to zero.
 
 **[nifti-qc](https://github.com/CedricConday/nifti-qc)** — quality-control for medical-imaging geometry *(Python)*
-Catches silently-broken NIfTI qform/sform geometry before it corrupts a neuroimaging pipeline — the kind of quiet data bug that invalidates an MS-lesion analysis without ever raising an error.
+Catches silently-broken NIfTI qform/sform geometry before it corrupts a neuroimaging pipeline — the kind of quiet data bug that invalidates a lesion analysis without ever raising an error.
 
 ### Open-source contributions
-Bugs found, reproduced, fixed *with a regression test*, and merged upstream — **19 merged across 14 established projects**:
+Bugs found, reproduced, fixed *with a regression test*, and merged upstream — **39 merged across 16 established projects**:
 <!-- COUNT IS LIVE: never hardcode from memory — verify with `gh search prs --author CedricConday --merged --limit 100 --json url --jq 'length'` before editing. -->
 
 
 **Medical & neuro-imaging**
 - **[mne-python](https://github.com/mne-tools/mne-python/pull/14002)** — eyetracking calibration files read as UTF-8 *(neuroimaging)*
 - **[nibabel](https://github.com/nipy/nibabel/pull/1522)** — set `patient_birth_date` dtype in the ECAT header to signed int32 *(neuroimaging — also earned a [CITATION.cff credit](https://github.com/nipy/nibabel/pull/1524))*
-- *In review:* MS-imaging campaign — [dicom2nifti](https://github.com/icometrix/dicom2nifti/pull/166), [LST-AI](https://github.com/CompImg/LST-AI/pull/45) *(DICOM / NIfTI · MS lesion tooling)*
+- *In review:* medical-imaging campaign — [dicom2nifti](https://github.com/icometrix/dicom2nifti/pull/166), [LST-AI](https://github.com/CompImg/LST-AI/pull/45) *(DICOM / NIfTI · MS lesion tooling)*
 
 **Fintech & data**
 - **[schwifty](https://github.com/mdomke/schwifty/pull/292)** — correct ISO 7064 mod-97-10 checksum for BA *(IBAN)*
