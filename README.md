@@ -1,4 +1,4 @@
-# Cedric Conday — Cognitive Scientist · AI / Full-Stack
+# Cedric Conday — Cognitive Scientist
 
 Cognitive scientist and self-taught engineer. I build LLM-powered products, agent systems, and medical / neuro-imaging tooling end to end, with AI as the method — orchestrating several agents as a one-person team. Current interest: cognitive modelling, medical software, and fintech / payments. TypeScript + Python. **Open to remote roles and relocation.** *In Deutschland ansässig; Deutsch und Englisch, remote wie vor Ort.*
 
