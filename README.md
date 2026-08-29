@@ -1,6 +1,6 @@
-# Cedric Conday — Software Engineer · AI / Full-Stack
+# Cedric Conday — Cognitive Scientist · AI / Full-Stack
 
-Self-taught software engineer. I build LLM-powered products and agent systems end to end, with AI as the method — orchestrating several agents as a one-person team. Current interest: medical software and fintech / payments. TypeScript + Python. **Open to remote roles and relocation.** *In Deutschland ansässig; Deutsch und Englisch, remote wie vor Ort.*
+Cognitive scientist and self-taught engineer. I build LLM-powered products, agent systems, and medical / neuro-imaging tooling end to end, with AI as the method — orchestrating several agents as a one-person team. Current interest: cognitive modelling, medical software, and fintech / payments. TypeScript + Python. **Open to remote roles and relocation.** *In Deutschland ansässig; Deutsch und Englisch, remote wie vor Ort.*
 
 📫 cedric@condaydigital.com · [LinkedIn](https://linkedin.com/in/cedricconday)
 
@@ -22,7 +22,7 @@ Nine tools modelled on the real Centrapay API — payment requests, settlement, 
 Catches silently-broken NIfTI qform/sform geometry before it corrupts a neuroimaging pipeline — the kind of quiet data bug that invalidates a lesion analysis without ever raising an error.
 
 ### Open-source contributions
-Bugs found, reproduced, fixed *with a regression test*, and merged upstream — **39 merged across 16 established projects**:
+Bugs found, reproduced, fixed *with a regression test*, and merged upstream — **46 merged across 17 established projects**:
 <!-- COUNT IS LIVE: never hardcode from memory — verify with `gh search prs --author CedricConday --merged --limit 100 --json url --jq 'length'` before editing. -->
 
 
