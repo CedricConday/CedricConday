@@ -17,8 +17,6 @@ cedric@condaydigital.com · [condaydigital.com](https://www.condaydigital.com) �
 | [x402-inspect](https://github.com/CedricConday/x402-inspect) | Decodes and validates x402 protocol messages — payment headers and payloads — from the CLI. |
 | [nifti-qc](https://github.com/CedricConday/nifti-qc) | Catches silently-broken NIfTI geometry — qform/sform mismatch, bad affines, misaligned inputs — before a neuroimaging pipeline consumes it. Python. |
 | [ms-twin-treat](https://github.com/CedricConday/ms-twin-treat) | Backtest-gated multi-scale simulation of MS interventions in silico, checked against known trial outcomes. Experimental; not validated, and not evidence about MS. |
-| [cp-app](https://github.com/CedricConday/cp-app) | Native shell around an existing website that rotates profile photos upright on-device before upload. Expo / React Native. |
-| [exif-orientation-php](https://github.com/CedricConday/exif-orientation-php) | Rotates JPEGs by their EXIF orientation field and strips the metadata. No dependencies beyond ext-gd. |
 | [automation-console](https://github.com/CedricConday/automation-console) | B2B workflow automation console — rule engine with trigger/condition/action modelling, live run log, KPI rollups. Angular 18, standalone components, signals, strict TypeScript. |
 | [tryhackme-writeups](https://github.com/CedricConday/tryhackme-writeups) | Technique-first TryHackMe writeups — web, binary exploitation, blue-team, DFIR, OSINT. |
 | protocol-tracker | Health-protocol tracker, two builds: React Native / Expo / SQLite with multi-provider vision-OCR, then re-architected as a zero-knowledge PWA (Capacitor, IndexedDB, PBKDF2→AES-GCM-256, no server). Private repo. |
