@@ -101,27 +101,26 @@ def render_merged(rec, prs):
 def render_map(rec, prs):
     """Mermaid domain map: field of work -> the projects worked in.
 
-    Deliberately shows breadth, never volume — no node carries a number, and
-    a project with one merge looks exactly like a project with eight.
+    Laid out as one subgraph per field, side by side, so it packs into a wide
+    band rather than a tall fan — the point is to shorten the page, not
+    lengthen it. Deliberately shows breadth, never volume: no node carries a
+    number, and a project with one merge looks like a project with eight.
     """
     have = {p["repository"]["nameWithOwner"] for p in prs}
-    lines = ["```mermaid", "flowchart LR"]
-    seen = set()
+    lines = ["```mermaid", "flowchart TB"]
     for i, b in enumerate(rec["buckets"]):
         repos = [r for r in b["repos"] if r in have]
         if not repos:
             continue
-        bid = f"B{i}"
-        lines.append(f'  {bid}("{b["name"]}")')
+        lines.append(f'  subgraph B{i}["{b["name"]}"]')
+        lines.append("    direction TB")
         for repo in repos:
             nid = "N" + re.sub(r"[^A-Za-z0-9]", "", repo)
-            if nid in seen:
-                continue
-            seen.add(nid)
             short = repo.split("/")[-1]
             dom = rec["domains"].get(repo, "")
             label = f"{short}<br/><i>{dom}</i>" if dom else short
-            lines.append(f'  {bid} --> {nid}["{label}"]')
+            lines.append(f'    {nid}["{label}"]')
+        lines.append("  end")
     lines.append("```")
     return "\n".join(lines)
 

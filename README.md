@@ -27,27 +27,33 @@ Each one a bug found, reproduced, fixed with a regression test, and merged.
 
 <!-- MAP:START -->
 ```mermaid
-flowchart LR
-  B0("Medical & neuro-imaging")
-  B0 --> Nmnetoolsmnepython["mne-python<br/><i>neuroimaging</i>"]
-  B0 --> Nnipynibabel["nibabel<br/><i>medical imaging</i>"]
-  B0 --> Nnilearnnilearn["nilearn<br/><i>neuroimaging</i>"]
-  B1("Fintech, IBAN & data")
-  B1 --> Njoke2kfaker["faker<br/><i>test data</i>"]
-  B1 --> Nmdomkeschwifty["schwifty<br/><i>banking identifiers</i>"]
-  B1 --> Naeontoolkitaeon["aeon<br/><i>time-series ML</i>"]
-  B1 --> Ndeepmodelingdpdata["dpdata<br/><i>computational chemistry</i>"]
-  B1 --> Ngrowthbookgrowthbook["growthbook<br/><i>feature flags</i>"]
-  B1 --> Nduckdbduckdbweb["duckdb-web<br/><i>databases</i>"]
-  B2("Developer tooling, infra & security")
-  B2 --> Nzeroclawlabszeroclaw["zeroclaw<br/><i>agent infrastructure</i>"]
-  B2 --> Njaegertracingjaeger["jaeger<br/><i>observability (CNCF)</i>"]
-  B2 --> Noctokitrequestjs["request.js<br/><i>developer tooling</i>"]
-  B2 --> Njsjodajsjoda["js-joda<br/><i>date & time</i>"]
-  B2 --> Nkrknchaoskrknai["krkn-ai<br/><i>chaos engineering</i>"]
-  B2 --> NAdyenadyennodeapilibrary["adyen-node-api-library<br/><i>payments</i>"]
-  B2 --> N15fivedjangoscim2["django-scim2<br/><i>identity (SCIM)</i>"]
-  B2 --> Nmailerlitemailerlitenodejs["mailerlite-nodejs<br/><i>email</i>"]
+flowchart TB
+  subgraph B0["Medical & neuro-imaging"]
+    direction TB
+    Nmnetoolsmnepython["mne-python<br/><i>neuroimaging</i>"]
+    Nnipynibabel["nibabel<br/><i>medical imaging</i>"]
+    Nnilearnnilearn["nilearn<br/><i>neuroimaging</i>"]
+  end
+  subgraph B1["Fintech, IBAN & data"]
+    direction TB
+    Njoke2kfaker["faker<br/><i>test data</i>"]
+    Nmdomkeschwifty["schwifty<br/><i>banking identifiers</i>"]
+    Naeontoolkitaeon["aeon<br/><i>time-series ML</i>"]
+    Ndeepmodelingdpdata["dpdata<br/><i>computational chemistry</i>"]
+    Ngrowthbookgrowthbook["growthbook<br/><i>feature flags</i>"]
+    Nduckdbduckdbweb["duckdb-web<br/><i>databases</i>"]
+  end
+  subgraph B2["Developer tooling, infra & security"]
+    direction TB
+    Nzeroclawlabszeroclaw["zeroclaw<br/><i>agent infrastructure</i>"]
+    Njaegertracingjaeger["jaeger<br/><i>observability (CNCF)</i>"]
+    Noctokitrequestjs["request.js<br/><i>developer tooling</i>"]
+    Njsjodajsjoda["js-joda<br/><i>date & time</i>"]
+    Nkrknchaoskrknai["krkn-ai<br/><i>chaos engineering</i>"]
+    NAdyenadyennodeapilibrary["adyen-node-api-library<br/><i>payments</i>"]
+    N15fivedjangoscim2["django-scim2<br/><i>identity (SCIM)</i>"]
+    Nmailerlitemailerlitenodejs["mailerlite-nodejs<br/><i>email</i>"]
+  end
 ```
 <!-- MAP:END -->
 
