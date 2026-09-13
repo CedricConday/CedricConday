@@ -27,33 +27,45 @@ Each one a bug found, reproduced, fixed with a regression test, and merged.
 
 <!-- MAP:START -->
 ```mermaid
-flowchart LR
-  subgraph B0["Medical & neuro-imaging"]
-    direction LR
-    Nmnetoolsmnepython["mne-python<br/><i>neuroimaging</i>"]
-    Nnipynibabel["nibabel<br/><i>medical imaging</i>"]
-    Nnilearnnilearn["nilearn<br/><i>neuroimaging</i>"]
-  end
-  subgraph B1["Fintech, IBAN & data"]
-    direction LR
-    Njoke2kfaker["faker<br/><i>test data</i>"]
-    Nmdomkeschwifty["schwifty<br/><i>banking identifiers</i>"]
-    Naeontoolkitaeon["aeon<br/><i>time-series ML</i>"]
-    Ndeepmodelingdpdata["dpdata<br/><i>computational chemistry</i>"]
-    Ngrowthbookgrowthbook["growthbook<br/><i>feature flags</i>"]
-    Nduckdbduckdbweb["duckdb-web<br/><i>databases</i>"]
-  end
-  subgraph B2["Developer tooling, infra & security"]
-    direction LR
-    Nzeroclawlabszeroclaw["zeroclaw<br/><i>agent infrastructure</i>"]
-    Njaegertracingjaeger["jaeger<br/><i>observability (CNCF)</i>"]
-    Noctokitrequestjs["request.js<br/><i>developer tooling</i>"]
-    Njsjodajsjoda["js-joda<br/><i>date & time</i>"]
-    Nkrknchaoskrknai["krkn-ai<br/><i>chaos engineering</i>"]
-    NAdyenadyennodeapilibrary["adyen-node-api-library<br/><i>payments</i>"]
-    N15fivedjangoscim2["django-scim2<br/><i>identity (SCIM)</i>"]
-    Nmailerlitemailerlitenodejs["mailerlite-nodejs<br/><i>email</i>"]
-  end
+mindmap
+  root((upstream))
+    Medical & neuro-imaging
+      mne-python
+        neuroimaging
+      nibabel
+        medical imaging
+      nilearn
+        neuroimaging
+    Fintech, IBAN & data
+      faker
+        test data
+      schwifty
+        banking identifiers
+      aeon
+        time-series ML
+      dpdata
+        computational chemistry
+      growthbook
+        feature flags
+      duckdb-web
+        databases
+    Developer tooling, infra & security
+      zeroclaw
+        agent infrastructure
+      jaeger
+        observability CNCF
+      request.js
+        developer tooling
+      js-joda
+        date & time
+      krkn-ai
+        chaos engineering
+      adyen-node-api-library
+        payments
+      django-scim2
+        identity SCIM
+      mailerlite-nodejs
+        email
 ```
 <!-- MAP:END -->
 

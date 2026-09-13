@@ -99,28 +99,32 @@ def render_merged(rec, prs):
 
 
 def render_map(rec, prs):
-    """Mermaid domain map: field of work -> the projects worked in.
+    """Mermaid mindmap: fields of work -> the projects worked in.
 
-    Laid out as one subgraph per field, side by side, so it packs into a wide
-    band rather than a tall fan — the point is to shorten the page, not
-    lengthen it. Deliberately shows breadth, never volume: no node carries a
-    number, and a project with one merge looks like a project with eight.
+    A mindmap is used rather than a flowchart because it packs radially; a
+    flowchart with this many leaves renders as a single tall column on GitHub,
+    which defeats the point. Mindmap labels are plain text only — no markup,
+    and no parentheses, which the parser treats as shape syntax.
+
+    Shows breadth, never volume: no node carries a number.
     """
     have = {p["repository"]["nameWithOwner"] for p in prs}
-    lines = ["```mermaid", "flowchart LR"]
-    for i, b in enumerate(rec["buckets"]):
+
+    def clean(t):
+        return re.sub(r"[()\[\]{}]", "", t).strip()
+
+    lines = ["```mermaid", "mindmap", "  root((upstream))"]
+    for b in rec["buckets"]:
         repos = [r for r in b["repos"] if r in have]
         if not repos:
             continue
-        lines.append(f'  subgraph B{i}["{b["name"]}"]')
-        lines.append("    direction LR")
+        lines.append(f"    {clean(b['name'])}")
         for repo in repos:
-            nid = "N" + re.sub(r"[^A-Za-z0-9]", "", repo)
             short = repo.split("/")[-1]
             dom = rec["domains"].get(repo, "")
-            label = f"{short}<br/><i>{dom}</i>" if dom else short
-            lines.append(f'    {nid}["{label}"]')
-        lines.append("  end")
+            lines.append(f"      {clean(short)}")
+            if dom:
+                lines.append(f"        {clean(dom)}")
     lines.append("```")
     return "\n".join(lines)
 
