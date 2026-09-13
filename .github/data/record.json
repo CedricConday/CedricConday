@@ -1,8 +1,6 @@
 {
  "_comment": "Hand-edited source of truth for the profile record. build_record.py preserves every blurb here and appends newly merged PRs using their PR title, which you then rewrite. `notes` adds a lead-in clause before a repo's items. No counts are ever rendered.",
- "display": {
-  "octokit/request.js": "octokit/request.js"
- },
+ "display": {},
  "domains": {
   "joke2k/faker": "test data",
   "mne-tools/mne-python": "neuroimaging",
@@ -121,7 +119,7 @@
   "mailerlite/mailerlite-nodejs#107": "edge/serverless runtimes via axios adapter fallback"
  },
  "notes": {
-  "joke2k/faker": "IBAN generators, each producing values that failed `python-stdnum` validation",
+  "joke2k/faker": "IBAN generators",
   "Adyen/adyen-node-api-library": "HMAC length guards"
  }
 }

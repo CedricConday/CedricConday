@@ -73,7 +73,7 @@ def render_merged(rec, prs):
             continue
         out.append(f"**{b['name']}**")
         for repo in repos:
-            short = rec["display"].get(repo, repo.split("/")[-1])
+            name = rec["display"].get(repo, repo)
             dom = rec["domains"].get(repo, "")
             items = []
             for p in sorted(by_repo[repo], key=lambda x: x["number"]):
@@ -82,13 +82,17 @@ def render_merged(rec, prs):
                     rec["blurbs"][key] = p["title"]
                     new.append(key)
                 url = f"https://github.com/{repo}/pull/{p['number']}"
-                items.append(f"[{rec['blurbs'][key]}]({url})")
-            label = f"[{short}](https://github.com/{repo})"
+                # Blurb rides along as the link title, so it is available on
+                # hover without putting a paragraph on the page.
+                tip = rec["blurbs"][key].replace('"', "'")
+                items.append(f"[#{p['number']}]({url} \"{tip}\")")
+            label = f"[{name}](https://github.com/{repo})"
             if dom:
-                label += f" · {dom}"
+                label += f" — {dom}"
             note = rec.get("notes", {}).get(repo)
-            body = f"{note}: " + ", ".join(items) if note else ", ".join(items)
-            out.append(f"- {label} — {body}")
+            if note:
+                label += f" · {note}"
+            out.append(f"- {label} · " + " ".join(items))
         out.append("")
     return "\n".join(out).rstrip(), new
 
