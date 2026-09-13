@@ -24,6 +24,7 @@ DATA = ROOT / ".github" / "data" / "record.json"
 README = ROOT / "README.md"
 M_START, M_END = "<!-- RECORD:START -->", "<!-- RECORD:END -->"
 I_START, I_END = "<!-- INREVIEW:START -->", "<!-- INREVIEW:END -->"
+P_START, P_END = "<!-- MAP:START -->", "<!-- MAP:END -->"
 
 QUERY = """query($endCursor:String){
   user(login:"CedricConday"){
@@ -97,6 +98,34 @@ def render_merged(rec, prs):
     return "\n".join(out).rstrip(), new
 
 
+def render_map(rec, prs):
+    """Mermaid domain map: field of work -> the projects worked in.
+
+    Deliberately shows breadth, never volume — no node carries a number, and
+    a project with one merge looks exactly like a project with eight.
+    """
+    have = {p["repository"]["nameWithOwner"] for p in prs}
+    lines = ["```mermaid", "flowchart LR"]
+    seen = set()
+    for i, b in enumerate(rec["buckets"]):
+        repos = [r for r in b["repos"] if r in have]
+        if not repos:
+            continue
+        bid = f"B{i}"
+        lines.append(f'  {bid}("{b["name"]}")')
+        for repo in repos:
+            nid = "N" + re.sub(r"[^A-Za-z0-9]", "", repo)
+            if nid in seen:
+                continue
+            seen.add(nid)
+            short = repo.split("/")[-1]
+            dom = rec["domains"].get(repo, "")
+            label = f"{short}<br/><i>{dom}</i>" if dom else short
+            lines.append(f'  {bid} --> {nid}["{label}"]')
+    lines.append("```")
+    return "\n".join(lines)
+
+
 def render_inreview(rec, prs):
     by_repo = {}
     for p in prs:
@@ -121,6 +150,7 @@ def main():
     block, new = render_merged(rec, merged)
     page = README.read_text(encoding="utf-8")
     page = splice(page, M_START, M_END, block)
+    page = splice(page, P_START, P_END, render_map(rec, merged))
     page = splice(page, I_START, I_END, render_inreview(rec, inreview))
     README.write_text(page, encoding="utf-8")
     DATA.write_text(json.dumps(rec, indent=1, ensure_ascii=False) + "\n",

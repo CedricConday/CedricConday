@@ -25,6 +25,32 @@ Each one a bug found, reproduced, fixed with a regression test, and merged.
      markers. Blurbs live in .github/data/record.json and are preserved across
      rebuilds. Counts are deliberately absent; do not reintroduce them. -->
 
+<!-- MAP:START -->
+```mermaid
+flowchart LR
+  B0("Medical & neuro-imaging")
+  B0 --> Nmnetoolsmnepython["mne-python<br/><i>neuroimaging</i>"]
+  B0 --> Nnipynibabel["nibabel<br/><i>medical imaging</i>"]
+  B0 --> Nnilearnnilearn["nilearn<br/><i>neuroimaging</i>"]
+  B1("Fintech, IBAN & data")
+  B1 --> Njoke2kfaker["faker<br/><i>test data</i>"]
+  B1 --> Nmdomkeschwifty["schwifty<br/><i>banking identifiers</i>"]
+  B1 --> Naeontoolkitaeon["aeon<br/><i>time-series ML</i>"]
+  B1 --> Ndeepmodelingdpdata["dpdata<br/><i>computational chemistry</i>"]
+  B1 --> Ngrowthbookgrowthbook["growthbook<br/><i>feature flags</i>"]
+  B1 --> Nduckdbduckdbweb["duckdb-web<br/><i>databases</i>"]
+  B2("Developer tooling, infra & security")
+  B2 --> Nzeroclawlabszeroclaw["zeroclaw<br/><i>agent infrastructure</i>"]
+  B2 --> Njaegertracingjaeger["jaeger<br/><i>observability (CNCF)</i>"]
+  B2 --> Noctokitrequestjs["request.js<br/><i>developer tooling</i>"]
+  B2 --> Njsjodajsjoda["js-joda<br/><i>date & time</i>"]
+  B2 --> Nkrknchaoskrknai["krkn-ai<br/><i>chaos engineering</i>"]
+  B2 --> NAdyenadyennodeapilibrary["adyen-node-api-library<br/><i>payments</i>"]
+  B2 --> N15fivedjangoscim2["django-scim2<br/><i>identity (SCIM)</i>"]
+  B2 --> Nmailerlitemailerlitenodejs["mailerlite-nodejs<br/><i>email</i>"]
+```
+<!-- MAP:END -->
+
 <!-- RECORD:START -->
 **Medical & neuro-imaging**
 - [mne-tools/mne-python](https://github.com/mne-tools/mne-python) — neuroimaging · [#14002](https://github.com/mne-tools/mne-python/pull/14002 "eyelink calibration files read as UTF-8") [#14004](https://github.com/mne-tools/mne-python/pull/14004 "warn when epoch events fall outside the raw range") [#14005](https://github.com/mne-tools/mne-python/pull/14005 "transition bandwidth in the 'filter too short' error") [#14006](https://github.com/mne-tools/mne-python/pull/14006 "pick-channels crash when `_orig_units` is None") [#14008](https://github.com/mne-tools/mne-python/pull/14008 "missing f-string prefixes in error messages") [#14185](https://github.com/mne-tools/mne-python/pull/14185 "`block` argument for `stc.plot()`")
