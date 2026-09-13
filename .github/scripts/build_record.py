@@ -107,13 +107,13 @@ def render_map(rec, prs):
     number, and a project with one merge looks like a project with eight.
     """
     have = {p["repository"]["nameWithOwner"] for p in prs}
-    lines = ["```mermaid", "flowchart TB"]
+    lines = ["```mermaid", "flowchart LR"]
     for i, b in enumerate(rec["buckets"]):
         repos = [r for r in b["repos"] if r in have]
         if not repos:
             continue
         lines.append(f'  subgraph B{i}["{b["name"]}"]')
-        lines.append("    direction TB")
+        lines.append("    direction LR")
         for repo in repos:
             nid = "N" + re.sub(r"[^A-Za-z0-9]", "", repo)
             short = repo.split("/")[-1]

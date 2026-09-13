@@ -27,15 +27,15 @@ Each one a bug found, reproduced, fixed with a regression test, and merged.
 
 <!-- MAP:START -->
 ```mermaid
-flowchart TB
+flowchart LR
   subgraph B0["Medical & neuro-imaging"]
-    direction TB
+    direction LR
     Nmnetoolsmnepython["mne-python<br/><i>neuroimaging</i>"]
     Nnipynibabel["nibabel<br/><i>medical imaging</i>"]
     Nnilearnnilearn["nilearn<br/><i>neuroimaging</i>"]
   end
   subgraph B1["Fintech, IBAN & data"]
-    direction TB
+    direction LR
     Njoke2kfaker["faker<br/><i>test data</i>"]
     Nmdomkeschwifty["schwifty<br/><i>banking identifiers</i>"]
     Naeontoolkitaeon["aeon<br/><i>time-series ML</i>"]
@@ -44,7 +44,7 @@ flowchart TB
     Nduckdbduckdbweb["duckdb-web<br/><i>databases</i>"]
   end
   subgraph B2["Developer tooling, infra & security"]
-    direction TB
+    direction LR
     Nzeroclawlabszeroclaw["zeroclaw<br/><i>agent infrastructure</i>"]
     Njaegertracingjaeger["jaeger<br/><i>observability (CNCF)</i>"]
     Noctokitrequestjs["request.js<br/><i>developer tooling</i>"]
