@@ -10,7 +10,6 @@ TypeScript · Python. LLM tooling and MCP servers, medical / neuro-imaging softw
 |---|---|
 | [xe-mcp](https://github.com/CedricConday/xe-mcp) | MCP server for the Xe Currency Data API — rates, conversion, volatility, moving averages, alerts, charts. Free ECB fallback, so it runs with no credentials. TypeScript. |
 | [centrapay-mcp](https://github.com/CedricConday/centrapay-mcp) | MCP server for the Centrapay payments API (NZ) — payment requests, sandbox settlement, refunds, merchants. Verified against the live sandbox. TypeScript. |
-| [buzz-mcp](https://github.com/CedricConday/buzz-mcp) | Joins any MCP client to a Buzz (NIP-29) relay as a first-class member — own keypair, own audit trail. Zero dependencies. |
 | [x402-inspect](https://github.com/CedricConday/x402-inspect) | Decodes and validates x402 protocol messages — payment headers and payloads — from the CLI. |
 | [nifti-qc](https://github.com/CedricConday/nifti-qc) | Catches silently-broken NIfTI geometry — qform/sform mismatch, bad affines, misaligned inputs — before a neuroimaging pipeline consumes it. Python. |
 | [ms-twin-treat](https://github.com/CedricConday/ms-twin-treat) | Backtest-gated multi-scale simulation of MS interventions in silico, checked against known trial outcomes. Experimental; not validated, and not evidence about MS. |
@@ -51,7 +50,7 @@ TypeScript · Python. LLM tooling and MCP servers, medical / neuro-imaging softw
 
 ## In review
 
-25 open across 15 projects — [nibabel](https://github.com/nipy/nibabel/pulls/CedricConday) ×7, [claude-code-security-review](https://github.com/anthropics/claude-code-security-review/pulls/CedricConday) ×5, and one each in opentelemetry-collector-contrib, pynetdicom, nipype, pybids, linkml, sandbox-runtime, buzz, traceroot, constructorio-client-javascript, nilearn, mne-python, faker, mailerlite-nodejs.
+18 open across 12 projects — [nibabel](https://github.com/nipy/nibabel/pulls/CedricConday) ×7, and one each in opentelemetry-collector-contrib, pynetdicom, nipype, pybids, linkml, sandbox-runtime, traceroot, nilearn, mne-python, faker, mailerlite-nodejs.
 
 ## Stack
 
