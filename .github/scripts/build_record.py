@@ -122,9 +122,8 @@ def render_map(rec, prs):
         for repo in repos:
             short = repo.split("/")[-1]
             dom = rec["domains"].get(repo, "")
-            lines.append(f"      {clean(short)}")
-            if dom:
-                lines.append(f"        {clean(dom)}")
+            label = f"{short} · {dom}" if dom else short
+            lines.append(f"      {clean(label)}")
     lines.append("```")
     return "\n".join(lines)
 

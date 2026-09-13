@@ -30,42 +30,25 @@ Each one a bug found, reproduced, fixed with a regression test, and merged.
 mindmap
   root((upstream))
     Medical & neuro-imaging
-      mne-python
-        neuroimaging
-      nibabel
-        medical imaging
-      nilearn
-        neuroimaging
+      mne-python · neuroimaging
+      nibabel · medical imaging
+      nilearn · neuroimaging
     Fintech, IBAN & data
-      faker
-        test data
-      schwifty
-        banking identifiers
-      aeon
-        time-series ML
-      dpdata
-        computational chemistry
-      growthbook
-        feature flags
-      duckdb-web
-        databases
+      faker · test data
+      schwifty · banking identifiers
+      aeon · time-series ML
+      dpdata · computational chemistry
+      growthbook · feature flags
+      duckdb-web · databases
     Developer tooling, infra & security
-      zeroclaw
-        agent infrastructure
-      jaeger
-        observability CNCF
-      request.js
-        developer tooling
-      js-joda
-        date & time
-      krkn-ai
-        chaos engineering
-      adyen-node-api-library
-        payments
-      django-scim2
-        identity SCIM
-      mailerlite-nodejs
-        email
+      zeroclaw · agent infrastructure
+      jaeger · observability CNCF
+      request.js · developer tooling
+      js-joda · date & time
+      krkn-ai · chaos engineering
+      adyen-node-api-library · payments
+      django-scim2 · identity SCIM
+      mailerlite-nodejs · email
 ```
 <!-- MAP:END -->
 
