@@ -2,9 +2,6 @@
 
 TypeScript · Python. LLM tooling and MCP servers, medical / neuro-imaging software, payments and fintech data.
 
-Germany — remote or on-site, German and English.
-cedric@condaydigital.com · [condaydigital.com](https://www.condaydigital.com) · [LinkedIn](https://linkedin.com/in/cedricconday)
-
 ---
 
 ## Repositories
