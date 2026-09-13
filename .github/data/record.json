@@ -1,0 +1,127 @@
+{
+ "_comment": "Hand-edited source of truth for the profile record. build_record.py preserves every blurb here and appends newly merged PRs using their PR title, which you then rewrite. `notes` adds a lead-in clause before a repo's items. No counts are ever rendered.",
+ "display": {
+  "octokit/request.js": "octokit/request.js"
+ },
+ "domains": {
+  "joke2k/faker": "test data",
+  "mne-tools/mne-python": "neuroimaging",
+  "nipy/nibabel": "medical imaging",
+  "nilearn/nilearn": "neuroimaging",
+  "Adyen/adyen-node-api-library": "payments",
+  "jaegertracing/jaeger": "observability (CNCF)",
+  "octokit/request.js": "developer tooling",
+  "duckdb/duckdb-web": "databases",
+  "mdomke/schwifty": "banking identifiers",
+  "js-joda/js-joda": "date & time",
+  "aeon-toolkit/aeon": "time-series ML",
+  "growthbook/growthbook": "feature flags",
+  "mailerlite/mailerlite-nodejs": "email",
+  "krkn-chaos/krkn-ai": "chaos engineering",
+  "deepmodeling/dpdata": "computational chemistry",
+  "15five/django-scim2": "identity (SCIM)",
+  "linkml/linkml": "data modelling",
+  "arthurdejong/python-stdnum": "standards",
+  "zeroclaw-labs/zeroclaw": "agent infrastructure",
+  "traceroot-ai/traceroot": "tracing",
+  "BerriAI/litellm": "LLM infrastructure",
+  "silverstripe/silverstripe-framework": "CMS",
+  "open-telemetry/opentelemetry-collector-contrib": "observability",
+  "bids-standard/pybids": "neuroimaging",
+  "nipy/nipype": "neuroimaging",
+  "pydicom/pynetdicom": "medical imaging (DICOM)",
+  "anthropics/sandbox-runtime": "agent infrastructure",
+  "block/buzz": "messaging",
+  "Constructor-io/constructorio-client-javascript": "search",
+  "anthropics/claude-code-security-review": "security tooling",
+  "scipy/scipy": "scientific computing"
+ },
+ "buckets": [
+  {
+   "name": "Medical & neuro-imaging",
+   "repos": [
+    "mne-tools/mne-python",
+    "nipy/nibabel",
+    "nilearn/nilearn"
+   ]
+  },
+  {
+   "name": "Fintech, IBAN & data",
+   "repos": [
+    "joke2k/faker",
+    "mdomke/schwifty",
+    "aeon-toolkit/aeon",
+    "deepmodeling/dpdata",
+    "growthbook/growthbook",
+    "duckdb/duckdb-web"
+   ]
+  },
+  {
+   "name": "Developer tooling, infra & security",
+   "repos": [
+    "zeroclaw-labs/zeroclaw",
+    "jaegertracing/jaeger",
+    "octokit/request.js",
+    "js-joda/js-joda",
+    "krkn-chaos/krkn-ai",
+    "Adyen/adyen-node-api-library",
+    "15five/django-scim2",
+    "mailerlite/mailerlite-nodejs"
+   ]
+  }
+ ],
+ "default_bucket": "Developer tooling, infra & security",
+ "blurbs": {
+  "mne-tools/mne-python#14002": "eyelink calibration files read as UTF-8",
+  "mne-tools/mne-python#14004": "warn when epoch events fall outside the raw range",
+  "mne-tools/mne-python#14005": "transition bandwidth in the \"filter too short\" error",
+  "mne-tools/mne-python#14006": "pick-channels crash when `_orig_units` is None",
+  "mne-tools/mne-python#14185": "`block` argument for `stc.plot()`",
+  "mne-tools/mne-python#14008": "missing f-string prefixes in error messages",
+  "nipy/nibabel#1522": "`patient_birth_date` dtype in the ECAT header set to signed int32",
+  "nipy/nibabel#1524": "CITATION.cff credit",
+  "nilearn/nilearn#6503": "clean non-finite values when smoothing surface images",
+  "nilearn/nilearn#6505": "send the requested slice index to the brainsprite viewer",
+  "joke2k/faker#2403": "de_DE",
+  "joke2k/faker#2404": "es_ES",
+  "joke2k/faker#2409": "da_DK",
+  "joke2k/faker#2410": "pt_BR",
+  "joke2k/faker#2411": "en_IE",
+  "joke2k/faker#2412": "nl_BE",
+  "joke2k/faker#2416": "ru_RU",
+  "joke2k/faker#2417": "uk_UA",
+  "mdomke/schwifty#292": "ISO 7064 mod-97-10 registered for BA, not BT",
+  "mdomke/schwifty#293": "validate IBAN characters over the full string",
+  "mdomke/schwifty#294": "add Yemen to the registry",
+  "mdomke/schwifty#296": "random BBANs that satisfy the national checksum",
+  "aeon-toolkit/aeon#3585": "`Padder` validates `fill_value`",
+  "aeon-toolkit/aeon#3614": "`AutoARIMA` respects `max_d`",
+  "aeon-toolkit/aeon#3615": "`NaiveForecaster` validates `seasonal_period`",
+  "aeon-toolkit/aeon#3626": "Extended Isolation Forest detector",
+  "deepmodeling/dpdata#1010": "pymatgen `Molecule` species built from `atom_types` order",
+  "deepmodeling/dpdata#1005": "tuple dtype in `DataType` repr",
+  "deepmodeling/dpdata#1011": "skip empty optional frame arrays on dump",
+  "growthbook/growthbook#6238": "URL casing preserved in pre-launch checklists",
+  "growthbook/growthbook#6323": "`$elemMatch` matches falsy array elements",
+  "duckdb/duckdb-web#6983": "Parquet row-group pruning tip",
+  "zeroclaw-labs/zeroclaw#8918": "Slack tokens redacted in the leak detector",
+  "zeroclaw-labs/zeroclaw#8775": "deferred `tool_search` resolves granted MCP tools",
+  "jaegertracing/jaeger#8902": "MCP reports `total_count` and truncation",
+  "jaegertracing/jaeger#8993": "cap `read_skill` output at `max_read_file_size`",
+  "octokit/request.js#820": "primitive JSON error bodies no longer throw",
+  "octokit/request.js#823": "`application/octet-stream` not decoded as text",
+  "js-joda/js-joda#804": "`Instant.parse` accepts and resolves an offset",
+  "js-joda/js-joda#810": "non-uniquely-parsable text styles excluded from parsing",
+  "krkn-chaos/krkn-ai#382": "dependency included in `CompositeScenario` identity",
+  "krkn-chaos/krkn-ai#397": "skip pods with no containers",
+  "Adyen/adyen-node-api-library#1712": "`NexoCrypto.validateHmac`",
+  "Adyen/adyen-node-api-library#1725": "`HmacValidator`",
+  "15five/django-scim2#210": "`itemsPerPage` reflects resources returned",
+  "15five/django-scim2#214": "SCIM error raised on `IntegrityError` in `PutView`",
+  "mailerlite/mailerlite-nodejs#107": "edge/serverless runtimes via axios adapter fallback"
+ },
+ "notes": {
+  "joke2k/faker": "IBAN generators, each producing values that failed `python-stdnum` validation",
+  "Adyen/adyen-node-api-library": "HMAC length guards"
+ }
+}
