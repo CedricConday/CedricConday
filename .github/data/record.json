@@ -64,7 +64,8 @@
     "krkn-chaos/krkn-ai",
     "Adyen/adyen-node-api-library",
     "15five/django-scim2",
-    "mailerlite/mailerlite-nodejs"
+    "mailerlite/mailerlite-nodejs",
+    "CedricConday/nifti-qc"
    ]
   }
  ],
@@ -116,7 +117,8 @@
   "Adyen/adyen-node-api-library#1725": "`HmacValidator`",
   "15five/django-scim2#210": "`itemsPerPage` reflects resources returned",
   "15five/django-scim2#214": "SCIM error raised on `IntegrityError` in `PutView`",
-  "mailerlite/mailerlite-nodejs#107": "edge/serverless runtimes via axios adapter fallback"
+  "mailerlite/mailerlite-nodejs#107": "edge/serverless runtimes via axios adapter fallback",
+  "CedricConday/nifti-qc#1": "Test on Python 3.10 through 3.14 and declare the versions"
  },
  "notes": {
   "joke2k/faker": "IBAN generators",

@@ -49,6 +49,7 @@ mindmap
       adyen-node-api-library · payments
       django-scim2 · identity SCIM
       mailerlite-nodejs · email
+      nifti-qc
 ```
 <!-- MAP:END -->
 
@@ -75,6 +76,7 @@ mindmap
 - [Adyen/adyen-node-api-library](https://github.com/Adyen/adyen-node-api-library) — payments · HMAC length guards · [#1712](https://github.com/Adyen/adyen-node-api-library/pull/1712 "`NexoCrypto.validateHmac`") [#1725](https://github.com/Adyen/adyen-node-api-library/pull/1725 "`HmacValidator`")
 - [15five/django-scim2](https://github.com/15five/django-scim2) — identity (SCIM) · [#210](https://github.com/15five/django-scim2/pull/210 "`itemsPerPage` reflects resources returned") [#214](https://github.com/15five/django-scim2/pull/214 "SCIM error raised on `IntegrityError` in `PutView`")
 - [mailerlite/mailerlite-nodejs](https://github.com/mailerlite/mailerlite-nodejs) — email · [#107](https://github.com/mailerlite/mailerlite-nodejs/pull/107 "edge/serverless runtimes via axios adapter fallback")
+- [CedricConday/nifti-qc](https://github.com/CedricConday/nifti-qc) · [#1](https://github.com/CedricConday/nifti-qc/pull/1 "Test on Python 3.10 through 3.14 and declare the versions")
 <!-- RECORD:END -->
 
 ## In review
