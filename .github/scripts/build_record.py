@@ -24,7 +24,6 @@ DATA = ROOT / ".github" / "data" / "record.json"
 README = ROOT / "README.md"
 M_START, M_END = "<!-- RECORD:START -->", "<!-- RECORD:END -->"
 I_START, I_END = "<!-- INREVIEW:START -->", "<!-- INREVIEW:END -->"
-P_START, P_END = "<!-- MAP:START -->", "<!-- MAP:END -->"
 
 QUERY = """query($endCursor:String){
   user(login:"CedricConday"){
@@ -55,7 +54,19 @@ def fetch(state):
     return nodes
 
 
+def upstream_only(prs):
+    """Own repos are not upstream. A self-merged PR in CedricConday/* is not
+    someone else's maintainer accepting a fix, and must not read as one."""
+    return [p for p in prs
+            if not p["repository"]["nameWithOwner"].startswith("CedricConday/")]
+
+
 def render_merged(rec, prs):
+    """Buckets marked `fold` in record.json render inside one <details>.
+
+    The page leads with the work it wants read; the rest stays one click away
+    rather than becoming a wall the reader has to scroll past.
+    """
     by_repo = {}
     for p in prs:
         by_repo.setdefault(p["repository"]["nameWithOwner"], []).append(p)
@@ -67,12 +78,10 @@ def render_merged(rec, prs):
                 if b["name"] == rec["default_bucket"]:
                     b["repos"].append(repo)
 
-    out, new = [], []
-    for b in rec["buckets"]:
-        repos = [r for r in b["repos"] if r in by_repo]
-        if not repos:
-            continue
-        out.append(f"**{b['name']}**")
+    new = []
+
+    def bucket_lines(b, repos, heading):
+        out = [heading] if heading else []
         for repo in repos:
             name = rec["display"].get(repo, repo)
             dom = rec["domains"].get(repo, "")
@@ -95,37 +104,26 @@ def render_merged(rec, prs):
                 label += f" · {note}"
             out.append(f"- {label} · " + " ".join(items))
         out.append("")
-    return "\n".join(out).rstrip(), new
+        return out
 
-
-def render_map(rec, prs):
-    """Mermaid mindmap: fields of work -> the projects worked in.
-
-    A mindmap is used rather than a flowchart because it packs radially; a
-    flowchart with this many leaves renders as a single tall column on GitHub,
-    which defeats the point. Mindmap labels are plain text only — no markup,
-    and no parentheses, which the parser treats as shape syntax.
-
-    Shows breadth, never volume: no node carries a number.
-    """
-    have = {p["repository"]["nameWithOwner"] for p in prs}
-
-    def clean(t):
-        return re.sub(r"[()\[\]{}]", "", t).strip()
-
-    lines = ["```mermaid", "mindmap", "  root((upstream))"]
+    shown, folded = [], []
     for b in rec["buckets"]:
-        repos = [r for r in b["repos"] if r in have]
+        repos = [r for r in b["repos"] if r in by_repo]
         if not repos:
             continue
-        lines.append(f"    {clean(b['name'])}")
-        for repo in repos:
-            short = repo.split("/")[-1]
-            dom = rec["domains"].get(repo, "")
-            label = f"{short} · {dom}" if dom else short
-            lines.append(f"      {clean(label)}")
-    lines.append("```")
-    return "\n".join(lines)
+        if b.get("fold"):
+            folded += bucket_lines(b, repos, f"**{b['name']}**")
+        else:
+            shown += bucket_lines(b, repos, None)
+
+    out = list(shown)
+    if folded:
+        out += ["<details>",
+                f"<summary>{rec.get('fold_summary', 'More upstream work')}</summary>",
+                ""]
+        out += folded
+        out += ["</details>"]
+    return "\n".join(out).rstrip(), new
 
 
 def render_inreview(rec, prs):
@@ -136,7 +134,7 @@ def render_inreview(rec, prs):
     for repo in sorted(by_repo, key=lambda r: (-len(by_repo[r]), r)):
         short = rec["display"].get(repo, repo.split("/")[-1])
         parts.append(f"[{short}](https://github.com/{repo}/pulls/CedricConday)")
-    return "Open, under review: " + ", ".join(parts) + "."
+    return "Open: " + ", ".join(parts) + "."
 
 
 def splice(page, start, end, block):
@@ -148,11 +146,11 @@ def splice(page, start, end, block):
 
 def main():
     rec = json.loads(DATA.read_text(encoding="utf-8"))
-    merged, inreview = fetch("MERGED"), fetch("OPEN")
+    merged = upstream_only(fetch("MERGED"))
+    inreview = upstream_only(fetch("OPEN"))
     block, new = render_merged(rec, merged)
     page = README.read_text(encoding="utf-8")
     page = splice(page, M_START, M_END, block)
-    page = splice(page, P_START, P_END, render_map(rec, merged))
     page = splice(page, I_START, I_END, render_inreview(rec, inreview))
     README.write_text(page, encoding="utf-8")
     DATA.write_text(json.dumps(rec, indent=1, ensure_ascii=False) + "\n",
