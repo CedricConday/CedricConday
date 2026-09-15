@@ -52,8 +52,7 @@
     "deepmodeling/dpdata",
     "growthbook/growthbook",
     "duckdb/duckdb-web"
-   ],
-   "fold": true
+   ]
   },
   {
    "name": "Developer tooling, infra & security",
@@ -67,8 +66,7 @@
     "15five/django-scim2",
     "mailerlite/mailerlite-nodejs",
     "CedricConday/nifti-qc"
-   ],
-   "fold": true
+   ]
   }
  ],
  "default_bucket": "Developer tooling, infra & security",
@@ -120,12 +118,10 @@
   "15five/django-scim2#210": "`itemsPerPage` reflects resources returned",
   "15five/django-scim2#214": "SCIM error raised on `IntegrityError` in `PutView`",
   "mailerlite/mailerlite-nodejs#107": "edge/serverless runtimes via axios adapter fallback",
-  "joke2k/faker#2415": "no_NO",
   "CedricConday/nifti-qc#1": "Test on Python 3.10 through 3.14 and declare the versions"
  },
  "notes": {
   "joke2k/faker": "IBAN generators",
   "Adyen/adyen-node-api-library": "HMAC length guards"
- },
- "fold_summary": "Fintech &amp; data, developer tooling, infra, security"
+ }
 }
