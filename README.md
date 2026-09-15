@@ -1,22 +1,5 @@
 # Cedric Conday
 
-TypeScript · Python. LLM tooling and MCP servers, medical / neuro-imaging software, payments and fintech data.
-
----
-
-## Repositories
-
-| repo | what it does |
-|---|---|
-| [xe-mcp](https://github.com/CedricConday/xe-mcp) | MCP server for the Xe Currency Data API — rates, conversion, volatility, moving averages, alerts, charts. Free ECB fallback, so it runs with no credentials. TypeScript. |
-| [centrapay-mcp](https://github.com/CedricConday/centrapay-mcp) | MCP server for the Centrapay payments API (NZ) — payment requests, sandbox settlement, refunds, merchants. Verified against the live sandbox. TypeScript. |
-| [x402-inspect](https://github.com/CedricConday/x402-inspect) | Decodes and validates x402 protocol messages — payment headers and payloads — from the CLI. |
-| [nifti-qc](https://github.com/CedricConday/nifti-qc) | Catches silently-broken NIfTI geometry — qform/sform mismatch, bad affines, misaligned inputs — before a neuroimaging pipeline consumes it. Python. |
-| [ms-twin-treat](https://github.com/CedricConday/ms-twin-treat) | Backtest-gated multi-scale simulation of MS interventions in silico, checked against known trial outcomes. Experimental; not validated, and not evidence about MS. |
-| [automation-console](https://github.com/CedricConday/automation-console) | B2B workflow automation console — rule engine with trigger/condition/action modelling, live run log, KPI rollups. Angular 20, standalone components, signals, strict TypeScript. |
-| [tryhackme-writeups](https://github.com/CedricConday/tryhackme-writeups) | Technique-first TryHackMe writeups — web, binary exploitation, blue-team, DFIR, OSINT. |
-| protocol-tracker | Health-protocol tracker, two builds: React Native / Expo / SQLite with multi-provider vision-OCR, then re-architected as a zero-knowledge PWA (Capacitor, IndexedDB, PBKDF2→AES-GCM-256, no server). Private repo. |
-
 ## Merged upstream
 
 Each one a bug found, reproduced, fixed with a regression test, and merged.
@@ -30,28 +13,80 @@ Each one a bug found, reproduced, fixed with a regression test, and merged.
 mindmap
   root((upstream))
     Medical & neuro-imaging
-      mne-python · neuroimaging
-      nibabel · medical imaging
-      nilearn · neuroimaging
+      mne-python
+        eyelink calibration files read as UTF-8
+        warn when epoch events fall outside the raw range
+        transition bandwidth in the "filter too short" error
+        pick-channels crash when _orig_units is None
+        missing f-string prefixes in error messages
+        block argument for stc.plot
+      nibabel
+        patient_birth_date dtype in the ECAT header set to signed int32
+        CITATION.cff credit
+      nilearn
+        clean non-finite values when smoothing surface images
+        send the requested slice index to the brainsprite viewer
     Fintech, IBAN & data
-      faker · test data
-      schwifty · banking identifiers
-      aeon · time-series ML
-      dpdata · computational chemistry
-      growthbook · feature flags
-      duckdb-web · databases
+      faker
+        de_DE
+        es_ES
+        da_DK
+        pt_BR
+        en_IE
+        nl_BE
+        no_NO
+        ru_RU
+        uk_UA
+      schwifty
+        ISO 7064 mod-97-10 registered for BA, not BT
+        validate IBAN characters over the full string
+        add Yemen to the registry
+        random BBANs that satisfy the national checksum
+      aeon
+        Padder validates fill_value
+        AutoARIMA respects max_d
+        NaiveForecaster validates seasonal_period
+        Extended Isolation Forest detector
+      dpdata
+        tuple dtype in DataType repr
+        pymatgen Molecule species built from atom_types order
+        skip empty optional frame arrays on dump
+      growthbook
+        URL casing preserved in pre-launch checklists
+        $elemMatch matches falsy array elements
+      duckdb-web
+        Parquet row-group pruning tip
     Developer tooling, infra & security
-      zeroclaw · agent infrastructure
-      jaeger · observability CNCF
-      request.js · developer tooling
-      js-joda · date & time
-      krkn-ai · chaos engineering
-      adyen-node-api-library · payments
-      django-scim2 · identity SCIM
-      mailerlite-nodejs · email
+      zeroclaw
+        deferred tool_search resolves granted MCP tools
+        Slack tokens redacted in the leak detector
+      jaeger
+        MCP reports total_count and truncation
+        cap read_skill output at max_read_file_size
+      request.js
+        primitive JSON error bodies no longer throw
+        application/octet-stream not decoded as text
+      js-joda
+        Instant.parse accepts and resolves an offset
+        non-uniquely-parsable text styles excluded from parsing
+      krkn-ai
+        dependency included in CompositeScenario identity
+        skip pods with no containers
+      adyen-node-api-library
+        NexoCrypto.validateHmac
+        HmacValidator
+      django-scim2
+        itemsPerPage reflects resources returned
+        SCIM error raised on IntegrityError in PutView
+      mailerlite-nodejs
+        edge/serverless runtimes via axios adapter fallback
       nifti-qc
+        Test on Python 3.10 through 3.14 and declare the versions
 ```
 <!-- MAP:END -->
+
+<details>
+<summary>Link index — every node above, with its pull request</summary>
 
 <!-- RECORD:START -->
 **Medical & neuro-imaging**
@@ -60,7 +95,7 @@ mindmap
 - [nilearn/nilearn](https://github.com/nilearn/nilearn) — neuroimaging · [#6503](https://github.com/nilearn/nilearn/pull/6503 "clean non-finite values when smoothing surface images") [#6505](https://github.com/nilearn/nilearn/pull/6505 "send the requested slice index to the brainsprite viewer")
 
 **Fintech, IBAN & data**
-- [joke2k/faker](https://github.com/joke2k/faker) — test data · IBAN generators · [#2403](https://github.com/joke2k/faker/pull/2403 "de_DE") [#2404](https://github.com/joke2k/faker/pull/2404 "es_ES") [#2409](https://github.com/joke2k/faker/pull/2409 "da_DK") [#2410](https://github.com/joke2k/faker/pull/2410 "pt_BR") [#2411](https://github.com/joke2k/faker/pull/2411 "en_IE") [#2412](https://github.com/joke2k/faker/pull/2412 "nl_BE") [#2416](https://github.com/joke2k/faker/pull/2416 "ru_RU") [#2417](https://github.com/joke2k/faker/pull/2417 "uk_UA")
+- [joke2k/faker](https://github.com/joke2k/faker) — test data · IBAN generators · [#2403](https://github.com/joke2k/faker/pull/2403 "de_DE") [#2404](https://github.com/joke2k/faker/pull/2404 "es_ES") [#2409](https://github.com/joke2k/faker/pull/2409 "da_DK") [#2410](https://github.com/joke2k/faker/pull/2410 "pt_BR") [#2411](https://github.com/joke2k/faker/pull/2411 "en_IE") [#2412](https://github.com/joke2k/faker/pull/2412 "nl_BE") [#2415](https://github.com/joke2k/faker/pull/2415 "no_NO") [#2416](https://github.com/joke2k/faker/pull/2416 "ru_RU") [#2417](https://github.com/joke2k/faker/pull/2417 "uk_UA")
 - [mdomke/schwifty](https://github.com/mdomke/schwifty) — banking identifiers · [#292](https://github.com/mdomke/schwifty/pull/292 "ISO 7064 mod-97-10 registered for BA, not BT") [#293](https://github.com/mdomke/schwifty/pull/293 "validate IBAN characters over the full string") [#294](https://github.com/mdomke/schwifty/pull/294 "add Yemen to the registry") [#296](https://github.com/mdomke/schwifty/pull/296 "random BBANs that satisfy the national checksum")
 - [aeon-toolkit/aeon](https://github.com/aeon-toolkit/aeon) — time-series ML · [#3585](https://github.com/aeon-toolkit/aeon/pull/3585 "`Padder` validates `fill_value`") [#3614](https://github.com/aeon-toolkit/aeon/pull/3614 "`AutoARIMA` respects `max_d`") [#3615](https://github.com/aeon-toolkit/aeon/pull/3615 "`NaiveForecaster` validates `seasonal_period`") [#3626](https://github.com/aeon-toolkit/aeon/pull/3626 "Extended Isolation Forest detector")
 - [deepmodeling/dpdata](https://github.com/deepmodeling/dpdata) — computational chemistry · [#1005](https://github.com/deepmodeling/dpdata/pull/1005 "tuple dtype in `DataType` repr") [#1010](https://github.com/deepmodeling/dpdata/pull/1010 "pymatgen `Molecule` species built from `atom_types` order") [#1011](https://github.com/deepmodeling/dpdata/pull/1011 "skip empty optional frame arrays on dump")
@@ -79,19 +114,4 @@ mindmap
 - [CedricConday/nifti-qc](https://github.com/CedricConday/nifti-qc) · [#1](https://github.com/CedricConday/nifti-qc/pull/1 "Test on Python 3.10 through 3.14 and declare the versions")
 <!-- RECORD:END -->
 
-## In review
-
-<!-- INREVIEW:START -->
-Open, under review: [nibabel](https://github.com/nipy/nibabel/pulls/CedricConday), [sandbox-runtime](https://github.com/anthropics/sandbox-runtime/pulls/CedricConday), [pybids](https://github.com/bids-standard/pybids/pulls/CedricConday), [faker](https://github.com/joke2k/faker/pulls/CedricConday), [linkml](https://github.com/linkml/linkml/pulls/CedricConday), [mailerlite-nodejs](https://github.com/mailerlite/mailerlite-nodejs/pulls/CedricConday), [mne-python](https://github.com/mne-tools/mne-python/pulls/CedricConday), [nilearn](https://github.com/nilearn/nilearn/pulls/CedricConday), [nipype](https://github.com/nipy/nipype/pulls/CedricConday), [opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib/pulls/CedricConday), [pynetdicom](https://github.com/pydicom/pynetdicom/pulls/CedricConday), [traceroot](https://github.com/traceroot-ai/traceroot/pulls/CedricConday).
-<!-- INREVIEW:END -->
-
-## Stack
-
-| | |
-|---|---|
-| **Languages** | TypeScript · Python · JavaScript · SQL · Rust · Bash |
-| **AI / LLM** | Multi-provider APIs (Claude · OpenAI · Groq) · MCP (self-authored servers) · multi-agent orchestration · RAG · vector DBs · vision-OCR |
-| **Web / Mobile** | React · React Native · Expo · Vite · Express · SQLite · Firebase |
-| **Data / Quant** | pandas · NumPy · SciPy · scikit-learn · backtesting · Monte-Carlo |
-| **Medical / imaging** | DICOM · NIfTI · neuroimaging (MNE · nibabel) · FHIR / HL7 (learning) |
-| **Infra / Quality** | AWS (Lambda · SAM) · Docker · Linux · GitHub Actions · unit / contract / regression tests · OpenTelemetry · signed commits |
+</details>

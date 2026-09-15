@@ -23,7 +23,6 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 DATA = ROOT / ".github" / "data" / "record.json"
 README = ROOT / "README.md"
 M_START, M_END = "<!-- RECORD:START -->", "<!-- RECORD:END -->"
-I_START, I_END = "<!-- INREVIEW:START -->", "<!-- INREVIEW:END -->"
 P_START, P_END = "<!-- MAP:START -->", "<!-- MAP:END -->"
 
 QUERY = """query($endCursor:String){
@@ -99,44 +98,37 @@ def render_merged(rec, prs):
 
 
 def render_map(rec, prs):
-    """Mermaid mindmap: fields of work -> the projects worked in.
+    """Mermaid mindmap: field of work -> project -> the actual fix.
 
+    This IS the record now; the text list below it is only the link index.
     A mindmap is used rather than a flowchart because it packs radially; a
     flowchart with this many leaves renders as a single tall column on GitHub,
     which defeats the point. Mindmap labels are plain text only — no markup,
-    and no parentheses, which the parser treats as shape syntax.
+    and no brackets, which the parser treats as shape syntax.
 
-    Shows breadth, never volume: no node carries a number.
+    Shows breadth and substance, never volume: no node carries a number.
     """
-    have = {p["repository"]["nameWithOwner"] for p in prs}
+    by_repo = {}
+    for p in prs:
+        by_repo.setdefault(p["repository"]["nameWithOwner"], []).append(p)
 
     def clean(t):
-        return re.sub(r"[()\[\]{}]", "", t).strip()
+        t = re.sub(r"[`()\[\]{}]", "", t)
+        return re.sub(r"\s+", " ", t).strip()
 
     lines = ["```mermaid", "mindmap", "  root((upstream))"]
     for b in rec["buckets"]:
-        repos = [r for r in b["repos"] if r in have]
+        repos = [r for r in b["repos"] if r in by_repo]
         if not repos:
             continue
         lines.append(f"    {clean(b['name'])}")
         for repo in repos:
-            short = repo.split("/")[-1]
-            dom = rec["domains"].get(repo, "")
-            label = f"{short} · {dom}" if dom else short
-            lines.append(f"      {clean(label)}")
+            lines.append(f"      {clean(repo.split('/')[-1])}")
+            for p in sorted(by_repo[repo], key=lambda x: x["number"]):
+                key = f"{repo}#{p['number']}"
+                lines.append(f"        {clean(rec['blurbs'].get(key, p['title']))}")
     lines.append("```")
     return "\n".join(lines)
-
-
-def render_inreview(rec, prs):
-    by_repo = {}
-    for p in prs:
-        by_repo.setdefault(p["repository"]["nameWithOwner"], []).append(p)
-    parts = []
-    for repo in sorted(by_repo, key=lambda r: (-len(by_repo[r]), r)):
-        short = rec["display"].get(repo, repo.split("/")[-1])
-        parts.append(f"[{short}](https://github.com/{repo}/pulls/CedricConday)")
-    return "Open, under review: " + ", ".join(parts) + "."
 
 
 def splice(page, start, end, block):
@@ -148,16 +140,15 @@ def splice(page, start, end, block):
 
 def main():
     rec = json.loads(DATA.read_text(encoding="utf-8"))
-    merged, inreview = fetch("MERGED"), fetch("OPEN")
+    merged = fetch("MERGED")
     block, new = render_merged(rec, merged)
     page = README.read_text(encoding="utf-8")
     page = splice(page, M_START, M_END, block)
     page = splice(page, P_START, P_END, render_map(rec, merged))
-    page = splice(page, I_START, I_END, render_inreview(rec, inreview))
     README.write_text(page, encoding="utf-8")
     DATA.write_text(json.dumps(rec, indent=1, ensure_ascii=False) + "\n",
                     encoding="utf-8")
-    print(f"record rebuilt: {len(merged)} merged, {len(inreview)} open")
+    print(f"record rebuilt: {len(merged)} merged")
     for k in new:
         print(f"  NEW (placeholder blurb, rewrite in record.json): {k}")
 
