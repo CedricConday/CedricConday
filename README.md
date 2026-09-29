@@ -8,9 +8,26 @@ I am a cognitive scientist. I started writing software in April 2026 because the
 
 **[ms-twin-treat](https://github.com/CedricConday/ms-twin-treat)** asks whether a multi-scale simulation of an MS therapy can be trusted at all. The backtest harness was built before the model, and nothing in the model is believed until it replays a known trial outcome. The honest result so far: the cell model beats both nulls on real interferon-beta data, and the foundation-model embedding I expected to carry it is statistically indistinguishable from a plain correlation matrix. The README says so.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CedricConday/CedricConday/main/figures/ms-twin-treat-nulls-dark.svg">
+  <img alt="The cell model scores 0.8732 against a canonical null of 0.8166 and a leaky null of 0.8498, with scGPT embeddings at 0.8696 and a noise ceiling of 0.8925" src="https://raw.githubusercontent.com/CedricConday/CedricConday/main/figures/ms-twin-treat-nulls-light.svg" width="560">
+</picture>
+
 **[lesiontrack](https://github.com/CedricConday/lesiontrack)** finds new, enlarging, shrinking and slowly expanding MS lesions across MRI timepoints, with one registration dependency and a run time of minutes. A synthetic backtest has to pass before any number is reported. It earned its keep immediately: it showed the registration tool's own Jacobian recovering under a third of the injected expansion, so the package now computes the Jacobian itself.
 
-**[bidsgate](https://github.com/CedricConday/bidsgate)** turns that check into a gate for any BIDS pipeline. Inject a known lesion or volume change into real data, run the tool, score what came back. The first scorecard is LST-AI on OpenNeuro controls, and it says plainly which lesion sizes the segmenter misses.
+<img alt="MSLesSeg patient P20, baseline to last follow-up: baseline lesions in cyan, new voxels on the warped follow-up in yellow, Jacobian expansion inside lesions with slowly-expanding-lesion candidate outlines in lime" src="https://raw.githubusercontent.com/CedricConday/lesiontrack/master/results/overview_P20.png" width="560">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CedricConday/CedricConday/main/figures/lesiontrack-backtest-dark.svg">
+  <img alt="Scatter of 24 injected lesion expansions against what lesiontrack measured back, all close to the identity line" src="https://raw.githubusercontent.com/CedricConday/CedricConday/main/figures/lesiontrack-backtest-light.svg" width="560">
+</picture>
+
+**[bidsgate](https://github.com/CedricConday/bidsgate)** turns that check into a gate for any BIDS pipeline. Inject a known lesion or volume change into real data, run the tool, score what came back. The first scorecard is LST-AI on OpenNeuro controls, and it says plainly where the segmenter fails: the lower third of the brain, at any lesion size.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CedricConday/CedricConday/main/figures/bidsgate-lst-ai-dark.svg">
+  <img alt="LST-AI v2 found 6 of 12 injected lesions in the lower third of the brain, 34 of 36 in the middle and 24 of 24 in the upper third; by volume it found 32 of 36 small, 10 of 12 medium and 22 of 24 large lesions" src="https://raw.githubusercontent.com/CedricConday/CedricConday/main/figures/bidsgate-lst-ai-light.svg" width="560">
+</picture>
 
 **[nifti-qc](https://github.com/CedricConday/nifti-qc)** catches the qform/sform disagreement that silently mislocates an image in world space. I first fixed that bug inside LST-AI's own pipeline, then wrote the check so nobody has to find it three steps downstream again.
 

@@ -1,0 +1,31 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='560' height='260' viewBox='0 0 560 260' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='13'>
+<rect width='560' height='260' fill='#1a1a19'/>
+<text x='20' y='22' fill='#ffffff' font-size='15' text-anchor='start' font-weight='600' >ms-twin-treat: the cell model against its nulls</text>
+<text x='20' y='38' fill='#c3c2b7' font-size='12' text-anchor='start' font-weight='normal' >leave-one-cell-type-out score on real interferon-beta data (Kang 2018), eight cell types</text>
+<line x1='40' y1='216' x2='520' y2='216' stroke='#33332f' stroke-width='1'/>
+<line x1='40.0' y1='216' x2='40.0' y2='221' stroke='#c3c2b7'/>
+<text x='40.0' y='236' fill='#c3c2b7' font-size='11' text-anchor='middle' font-weight='normal' >0.80</text>
+<line x1='136.0' y1='216' x2='136.0' y2='221' stroke='#c3c2b7'/>
+<text x='136.0000000000001' y='236' fill='#c3c2b7' font-size='11' text-anchor='middle' font-weight='normal' >0.82</text>
+<line x1='232.0' y1='216' x2='232.0' y2='221' stroke='#c3c2b7'/>
+<text x='232.00000000000023' y='236' fill='#c3c2b7' font-size='11' text-anchor='middle' font-weight='normal' >0.84</text>
+<line x1='328.0' y1='216' x2='328.0' y2='221' stroke='#c3c2b7'/>
+<text x='327.9999999999998' y='236' fill='#c3c2b7' font-size='11' text-anchor='middle' font-weight='normal' >0.86</text>
+<line x1='424.0' y1='216' x2='424.0' y2='221' stroke='#c3c2b7'/>
+<text x='423.99999999999983' y='236' fill='#c3c2b7' font-size='11' text-anchor='middle' font-weight='normal' >0.88</text>
+<line x1='520.0' y1='216' x2='520.0' y2='221' stroke='#c3c2b7'/>
+<text x='520.0' y='236' fill='#c3c2b7' font-size='11' text-anchor='middle' font-weight='normal' >0.90</text>
+<line x1='119.7' y1='58' x2='119.7' y2='216' stroke='#c3c2b7' stroke-width='1' stroke-dasharray='3 3'/>
+<circle cx='119.7' cy='66' r='5' fill='#c3c2b7' stroke='#1a1a19' stroke-width='2'/>
+<text x='131.67999999999978' y='70' fill='#ffffff' font-size='12' text-anchor='start' font-weight='normal' >leave-one-out null (canonical bar)  0.8166</text>
+<line x1='279.0' y1='88' x2='279.0' y2='216' stroke='#c3c2b7' stroke-width='1' stroke-dasharray='3 3'/>
+<circle cx='279.0' cy='96' r='5' fill='#c3c2b7' stroke='#1a1a19' stroke-width='2'/>
+<text x='291.03999999999985' y='100' fill='#ffffff' font-size='12' text-anchor='start' font-weight='normal' >global null (leaky, the harder bar)  0.8498</text>
+<circle cx='374.1' cy='126' r='5' fill='#c3c2b7' stroke='#1a1a19' stroke-width='2'/>
+<text x='362.0800000000001' y='130' fill='#ffffff' font-size='12' text-anchor='end' font-weight='normal' >scGPT embeddings  0.8696</text>
+<circle cx='391.4' cy='156' r='7' fill='#3987e5' stroke='#1a1a19' stroke-width='2'/>
+<text x='379.35999999999973' y='160' fill='#ffffff' font-size='12' text-anchor='end' font-weight='600' >control-similarity transfer  0.8732</text>
+<line x1='484.0' y1='178' x2='484.0' y2='216' stroke='#c3c2b7' stroke-width='1' stroke-dasharray='3 3'/>
+<circle cx='484.0' cy='186' r='5' fill='#c3c2b7' stroke='#1a1a19' stroke-width='2'/>
+<text x='471.9999999999997' y='190' fill='#ffffff' font-size='12' text-anchor='end' font-weight='normal' >noise ceiling  0.8925</text>
+</svg>

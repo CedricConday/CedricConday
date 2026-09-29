@@ -1,0 +1,32 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='560' height='300' viewBox='0 0 560 300' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='13'>
+<rect width='560' height='300' fill='#1a1a19'/>
+<text x='20' y='22' fill='#ffffff' font-size='15' text-anchor='start' font-weight='600' >bidsgate: what LST-AI v2 recovered from injected lesions</text>
+<text x='20' y='38' fill='#c3c2b7' font-size='12' text-anchor='start' font-weight='normal' >6 OpenNeuro controls, twelve lesions each; share of injected lesions the segmenter found</text>
+<text x='20' y='68' fill='#c3c2b7' font-size='12' text-anchor='start' font-weight='600' >by position in the brain</text>
+<text x='20' y='96' fill='#ffffff' font-size='12' text-anchor='start' font-weight='normal' >lower third</text>
+<rect x='20' y='104' width='150' height='14' rx='4' fill='#33332f'/>
+<rect x='20' y='104' width='75.0' height='14' rx='4' fill='#3987e5'/>
+<text x='180' y='116' fill='#c3c2b7' font-size='12' text-anchor='start' font-weight='normal' >6 of 12</text>
+<text x='20' y='152' fill='#ffffff' font-size='12' text-anchor='start' font-weight='normal' >middle third</text>
+<rect x='20' y='160' width='150' height='14' rx='4' fill='#33332f'/>
+<rect x='20' y='160' width='141.7' height='14' rx='4' fill='#3987e5'/>
+<text x='180' y='172' fill='#c3c2b7' font-size='12' text-anchor='start' font-weight='normal' >34 of 36</text>
+<text x='20' y='208' fill='#ffffff' font-size='12' text-anchor='start' font-weight='normal' >upper third</text>
+<rect x='20' y='216' width='150' height='14' rx='4' fill='#33332f'/>
+<rect x='20' y='216' width='150.0' height='14' rx='4' fill='#3987e5'/>
+<text x='180' y='228' fill='#c3c2b7' font-size='12' text-anchor='start' font-weight='normal' >24 of 24</text>
+<text x='300' y='68' fill='#c3c2b7' font-size='12' text-anchor='start' font-weight='600' >by lesion volume</text>
+<text x='300' y='96' fill='#ffffff' font-size='12' text-anchor='start' font-weight='normal' >under 100 mm³</text>
+<rect x='300' y='104' width='150' height='14' rx='4' fill='#33332f'/>
+<rect x='300' y='104' width='133.3' height='14' rx='4' fill='#3987e5'/>
+<text x='460' y='116' fill='#c3c2b7' font-size='12' text-anchor='start' font-weight='normal' >32 of 36</text>
+<text x='300' y='152' fill='#ffffff' font-size='12' text-anchor='start' font-weight='normal' >100 to 500 mm³</text>
+<rect x='300' y='160' width='150' height='14' rx='4' fill='#33332f'/>
+<rect x='300' y='160' width='125.0' height='14' rx='4' fill='#3987e5'/>
+<text x='460' y='172' fill='#c3c2b7' font-size='12' text-anchor='start' font-weight='normal' >10 of 12</text>
+<text x='300' y='208' fill='#ffffff' font-size='12' text-anchor='start' font-weight='normal' >over 500 mm³</text>
+<rect x='300' y='216' width='150' height='14' rx='4' fill='#33332f'/>
+<rect x='300' y='216' width='137.5' height='14' rx='4' fill='#3987e5'/>
+<text x='460' y='228' fill='#c3c2b7' font-size='12' text-anchor='start' font-weight='normal' >22 of 24</text>
+<text x='20' y='288' fill='#c3c2b7' font-size='11' text-anchor='start' font-weight='normal' >the lower third of the brain is where it fails; volume barely matters</text>
+</svg>
