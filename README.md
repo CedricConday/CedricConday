@@ -29,6 +29,10 @@ I am a cognitive scientist. I started writing software in April 2026 because the
   <img alt="LST-AI v2 found 6 of 12 injected lesions in the lower third of the brain, 34 of 36 in the middle and 24 of 24 in the upper third; by volume it found 32 of 36 small, 10 of 12 medium and 22 of 24 large lesions" src="https://raw.githubusercontent.com/CedricConday/CedricConday/main/figures/bidsgate-lst-ai-light.svg" width="560">
 </picture>
 
+**[mscard](https://github.com/CedricConday/mscard)** is the report those two were built for: two MRI visits in, one page out, with new, enlarging, shrinking and resolved lesions, slowly expanding lesion candidates and brain volume change. Before the page is written, the same pipeline runs on the patient's own baseline with known changes injected, and every number carries how much of that truth it recovered. On 24 public MSLesSeg patients the tracking held (1 false change call in 551 lesions) and the standard slowly-expanding-lesion rule fired about once per lesion with no lesion expanding, which is the number a reader of any SEL count should have next to it. [Every report is online.](https://cedricconday.github.io/mscard/)
+
+<img alt="mscard findings cards for MSLesSeg patient P1: 4 new, 3 enlarging, 4 shrinking, 7 resolved lesions, lesion volume change -18 %/yr, 20 SEL candidates and brain volume change, each with a green, amber, red or grey calibration badge" src="https://raw.githubusercontent.com/CedricConday/CedricConday/main/figures/mscard-report-p1.png" width="560">
+
 **[nifti-qc](https://github.com/CedricConday/nifti-qc)** catches the qform/sform disagreement that silently mislocates an image in world space. I first fixed that bug inside LST-AI's own pipeline, then wrote the check so nobody has to find it three steps downstream again.
 
 Two tools came out of the work itself rather than the subject. **[gh-odds](https://github.com/CedricConday/gh-odds)** measures, before you open a pull request, whether a repository actually merges outsiders and how long that takes. **[cachemiss](https://github.com/CedricConday/cachemiss)** reads the transcripts Claude Code keeps on disk and explains where a quota went.
